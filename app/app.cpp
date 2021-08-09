@@ -1,6 +1,21 @@
 #include "../include/mycomplex/mycomplex.hpp"
 #include <iostream>
 
+class Val{
+public:
+    explicit Val(int i){
+        this->_i = i;
+    }
+    Val(Val& val){
+
+    }
+    Val(Val&& val) noexcept {
+        
+    }
+private:
+    int _i{};
+};
+
 int main(){
 
     Complex a(13, 1);
