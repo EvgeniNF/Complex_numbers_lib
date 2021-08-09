@@ -1,5 +1,5 @@
 //
-// Created by kandi on 06.08.2021.
+// Created by User on 05.08.2021.
 //
 #include "../mycomplex/mycomplex.hpp"
 #include <iostream>
@@ -120,6 +120,51 @@ Complex Complex::operator/(const Complex &complex) const {
 }
 
 void Complex::err_comparison() {
-    throw std::runtime_error("Comparison of complex numbers is not possible");
+    throw std::exception("Comparison of complex numbers is not possible");
 }
+
+std::vector<unsigned long> Complex::pascal_triangle(unsigned int n) {
+    std::vector<unsigned long> c ={};
+    c.resize(n + 1);
+    // Обнуляем вектор
+    for (unsigned int i = 0; i <= n; i++){
+        c.at(i) = 0;
+    }
+    // 0 степень треугольника
+    c.at(0) = 1;
+    // Вычисляем коэффициенты перемещаясь сверху вниз
+    for (unsigned int j = 0; j <= n; j++){
+        for (unsigned int i = j; i >= 1; --i){
+            c.at(i) = c.at(i - 1) + c.at(i);
+        }
+    }
+    return c;
+}
+
+Complex Complex::pow_complex(int n) {
+    std::vector<unsigned long> triangle = this->pascal_triangle(static_cast<unsigned int>(n));
+    double pow_real = 0;
+    double pow_imag = 0;
+    for (int i = 0; i <= n; i++){
+        if (i % 2 == 0){
+            if ((i / 2) % 2 == 0){
+                pow_real += triangle.at(i) * (pow(this->get_real(), n - i) * pow(this->get_imag(), i));
+            }
+            else {
+                pow_real += triangle.at(i) * (pow(this->get_real(), n - i) * pow(this->get_imag(), i) * -1);
+            }
+        }
+        else {
+            if ((i / 2) % 2 == 0){
+                pow_imag += triangle.at(i) * (pow(this->get_real(), n - i) * pow(this->get_imag(), i));
+            }
+            else {
+                pow_imag += triangle.at(i) * (pow(this->get_real(), n - i) * pow(this->get_imag(), i) * -1);
+            }
+        }
+    }
+    return Complex(pow_real, pow_imag);
+}
+
+
 

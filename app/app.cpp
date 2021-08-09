@@ -1,7 +1,3 @@
-//
-// Created by kandi on 06.08.2021.
-//
-
 #include "../include/mycomplex/mycomplex.hpp"
 #include <iostream>
 
@@ -37,6 +33,11 @@ int main(){
     catch (const std::exception& err){
         std::cout << err.what() << std::endl;
     }
-
+    std::cout << std::endl;
+    std::cout << std::endl;
+    c.set_real(-3);
+    c.set_imag(-1);
+    c = c.pow_complex(3);
+    c.show_complex_algebraic();
     return 0;
 }

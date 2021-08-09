@@ -1,12 +1,13 @@
 //
-// Created by kandi on 06.08.2021.
+// Created by User on 05.08.2021.
 //
+
 
 #ifndef MATH_LIB_MYMATH_HPP
 #define MATH_LIB_MYMATH_HPP
 
 #include <iostream>
-
+#include <vector>
 
 class Complex{
 public:
@@ -76,6 +77,11 @@ public:
      * Функция вызывает исключение при выполнеия сравнений чисел
      * @complex - сравниваемое число
      */
+    Complex pow_complex(int n);
+    /* Функция
+     * Возведение в степень
+     * @n - Степень возведения
+     */
     Complex(Complex &complex);
     Complex(Complex &&complex) noexcept;
     ~Complex() = default;
@@ -88,8 +94,13 @@ private:
     /* Функция
      * Находит модуль комплексного числа
      */
-    double _real{};
-    double _imag{};
+    static std::vector<unsigned long> pascal_triangle(unsigned int n);
+    /* Функция
+     * Находит коэффициенты для бинома Ньютона
+     * @n - Степень бинома
+     */
+    double _real{};  // Действительная часть комплексного числа
+    double _imag{};  // Мнимая часть комплексного числа
 };
 
 #endif //MATH_LIB_MYMATH_HPP
