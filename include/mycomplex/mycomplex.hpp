@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 
-class Complex{
+class Complex : std::exception{
 public:
     explicit Complex(double real = 0, double imag = 0);
     /* Конструктор
@@ -84,7 +84,7 @@ public:
      */
     Complex(Complex &complex);
     Complex(Complex &&complex) noexcept;
-    ~Complex() = default;
+    ~Complex() override = default;
 private:
     static void err_comparison();
     /* Функция

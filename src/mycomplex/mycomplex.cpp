@@ -6,8 +6,9 @@
 #include <cmath>
 
 
-Complex::Complex(Complex &complex){
-    //std::cout << "It's copy" << std::endl;
+Complex::Complex(Complex &complex) : exception(complex) {
+    complex.set_imag(this->get_imag());
+    complex.set_real(this->get_real());
 }
 
 Complex::Complex(Complex &&complex) noexcept {
@@ -100,27 +101,27 @@ Complex& Complex::operator=(const Complex& complex) {
 }
 
 Complex Complex::operator*(const Complex &complex) const {
-    double real = 0;
-    double imag = 0;
-    real = (this->get_real() * complex.get_real()) + (this->get_imag() * complex.get_imag()) * -1;
-    imag = (this->get_imag() * complex.get_real()) + (this->get_real() * complex.get_imag());
+    double real = (this->get_real() * complex.get_real()) + (this->get_imag() * complex.get_imag()) * -1;
+    double imag = (this->get_imag() * complex.get_real()) + (this->get_real() * complex.get_imag());
     return Complex(real, imag);
 }
 
 Complex Complex::operator/(const Complex &complex) const {
-    double real = 0;
-    double imag = 0;
-    double divider = 0;
-    divider = pow(complex.get_real(), 2) - pow(complex.get_imag(), 2) * -1;
-    real = (this->get_real() * complex.get_real()) + (this->get_imag() * complex.get_imag() * -1) * -1;
-    imag = (this->get_imag() * complex.get_real()) + (this->get_real() * complex.get_imag() * -1);
+    double divider = pow(complex.get_real(), 2) - pow(complex.get_imag(), 2) * -1;
+    double real = (this->get_real() * complex.get_real()) + (this->get_imag() * complex.get_imag() * -1) * -1;
+    double imag = (this->get_imag() * complex.get_real()) + (this->get_real() * complex.get_imag() * -1);
     real /= divider;
     imag /= divider;
     return Complex(real, imag);
 }
 
 void Complex::err_comparison() {
-    throw std::exception("Comparison of complex numbers is not possible");
+    try{
+        throw std::exception("Complex numbers cannot be compared");
+    }
+    catch (const std::exception& error){
+        std::cout << "Error: " << error.what() << std::endl;
+    }
 }
 
 std::vector<unsigned long> Complex::pascal_triangle(unsigned int n) {

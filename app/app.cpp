@@ -26,13 +26,7 @@ int main(){
     c = a / b;
     std::cout << "Number C = A / B:" << std::endl;
     c.show_complex_algebraic();
-
-    try{
-        a == b;
-    }
-    catch (const std::exception& err){
-        std::cout << err.what() << std::endl;
-    }
+    a == b;
     c.set_real(-3);
     c.set_imag(-1);
     c = c.pow_complex(3);
