@@ -7,6 +7,6 @@ project(Complex_Numbers
         DESCRIPTION "My first lib in C++"
         LANGUAGES CXX)
 
-# Подключение директорий
+# Подключение директорий 
 add_subdirectory(app)
 add_subdirectory(src)
