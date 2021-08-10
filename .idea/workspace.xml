@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64ac7d0-aa65-4754-b369-31f3af8510ca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,11 +49,6 @@
     <property name="settings.editor.selected.configurable" value="clion.platformio.config" />
   </component>
   <component name="RunManager" selected="CMake Application.application">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="application" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Complex_Numbers" TARGET_NAME="application" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Complex_Numbers" RUN_TARGET_NAME="application">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -82,12 +78,8 @@
       <option name="presentableId" value="Default" />
       <updated>1628412649195</updated>
       <workItem from="1628412651336" duration="1836000" />
-<<<<<<< HEAD
       <workItem from="1628504346113" duration="1493000" />
-=======
-      <workItem from="1628504346113" duration="704000" />
-      <workItem from="1628521425437" duration="6000" />
->>>>>>> 5d20f3bfbc296c14a421fb81fd9c8719a177d80c
+      <workItem from="1628572362264" duration="792000" />
     </task>
     <servers />
   </component>
