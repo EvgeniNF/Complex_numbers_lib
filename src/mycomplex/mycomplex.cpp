@@ -71,7 +71,7 @@ void Complex::show_complex_trigonometric() const {
 }
 
 double Complex::module_complex() const {
-    auto module = static_cast<double>(pow(this->_real, 2) + pow(this->_imag, 2));
+    double module = pow(this->_real, 2) + pow(this->_imag, 2);
     module = sqrt(module);
     return module;
 }

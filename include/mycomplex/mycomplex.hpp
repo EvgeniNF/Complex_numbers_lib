@@ -82,6 +82,10 @@ public:
      * Возведение в степень
      * @n - Степень возведения
      */
+    [[nodiscard]] double module_complex() const;
+    /* Функция
+     * Находит модуль комплексного числа
+     */
     Complex(Complex &complex);
     Complex(Complex &&complex) noexcept;
     ~Complex() override = default;
@@ -89,10 +93,6 @@ private:
     static void err_comparison();
     /* Функция
      * Вызывает исключение
-     */
-    [[nodiscard]] double module_complex() const;
-    /* Функция
-     * Находит модуль комплексного числа
      */
     static std::vector<unsigned long> pascal_triangle(unsigned int n);
     /* Функция
