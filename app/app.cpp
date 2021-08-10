@@ -10,7 +10,7 @@ public:
 
     }
     Val(Val&& val) noexcept {
-        
+
     }
 private:
     int _i{};
@@ -48,8 +48,6 @@ int main(){
     catch (const std::exception& err){
         std::cout << err.what() << std::endl;
     }
-    std::cout << std::endl;
-    std::cout << std::endl;
     c.set_real(-3);
     c.set_imag(-1);
     c = c.pow_complex(3);
