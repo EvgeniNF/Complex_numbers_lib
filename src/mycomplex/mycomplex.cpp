@@ -39,8 +39,10 @@ void Complex::show_complex_trigonometric() const {
         return;
     }
     double module = this->module_complex();
+    double f = this->angle_f();
     std::cout << module << " * ";
-    if (this->_imag == 0 && this->_real > 0) {
+    std::cout << "(cos(" << f << ") + i*sin(" << f << "))" << std::endl;
+    /*if (this->_imag == 0 && this->_real > 0) {
         std::cout << "(cos(0) + i*sin(0))" << std::endl;
     }
     else if (this->_imag == 0 && this->_real < 0){
@@ -68,6 +70,7 @@ void Complex::show_complex_trigonometric() const {
         double f = atan((this->_real / this->_imag) * (-1)) * 180/3.14;
         std::cout << "(cos(180 - " << f << ") + i*sin(180 - " << f << "))" << std::endl;
     }
+    */
 }
 
 double Complex::module_complex() const {
@@ -165,6 +168,28 @@ Complex Complex::pow_complex(int n) {
         }
     }
     return Complex(pow_real, pow_imag);
+}
+
+double Complex::angle_f() const {
+    if (this->_real == 0 && this->_imag >= 0){
+        return .0;
+    }
+    else if (this->_imag == 0 && this->_real < 0){
+        return 180.0;
+    }
+    else if (this->_imag > 0 && this->_real == 0) {
+        return 90.0;
+    }
+    else if(this->_imag < 0 && this->_real == 0){
+        return -90.0;
+    }
+    else if (this->_real > 0 && this->_imag > 0 || this->_real < 0 && this->_imag < 0){
+        return atan(this->_real / this->_imag) * 180/3.14;
+    }
+    else if (this->_real > 0 && this->_imag < 0 || this->_real < 0 && this->_imag > 0){
+        return atan((this->_real / this->_imag) * (-1)) * 180/3.14;
+    }
+    return .0;
 }
 
 

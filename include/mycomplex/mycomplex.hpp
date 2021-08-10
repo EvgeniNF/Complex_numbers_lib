@@ -94,6 +94,10 @@ private:
     /* Функция
      * Вызывает исключение
      */
+    [[nodiscard]] double angle_f() const;
+    /* Функция
+     * Возвращает расчитанное значение угла f
+     */
     static std::vector<unsigned long> pascal_triangle(unsigned int n);
     /* Функция
      * Находит коэффициенты для бинома Ньютона
